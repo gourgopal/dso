@@ -1740,6 +1740,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    text-align: center;
     transition: var(--transition);
     min-height: 52px;
     text-decoration: none;
@@ -1749,6 +1750,7 @@ h1, h2, h3, h4, h5, h6 {
   .mob-nav-item i {
     font-size: 1.2rem;
     display: block;
+    margin: 0 auto;
     transition: var(--transition);
   }
 
