@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Active nav link based on current page ---
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+  // Desktop nav active state
   document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.remove('active');
     const href = link.getAttribute('href');
@@ -152,5 +154,33 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
+
+  // Mobile bottom nav active state
+  const mobileNavMap = {
+    'index.html': 'mobNavHome',
+    '': 'mobNavHome',
+    'products.html': 'mobNavProducts',
+    'pos.html': 'mobNavPOS',
+    'about.html': null,       // no dedicated tab — dimmed
+    'contact.html': null,     // no dedicated tab — dimmed
+  };
+
+  document.querySelectorAll('.mob-nav-item').forEach(item => {
+    item.classList.remove('active');
+  });
+
+  const activeTabId = mobileNavMap[currentPage];
+  if (activeTabId) {
+    const activeTab = document.getElementById(activeTabId);
+    if (activeTab) activeTab.classList.add('active');
+  }
+
+  // --- Touch ripple feedback on mobile buttons ---
+  if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    document.querySelectorAll('.btn, .mob-nav-item, .product-card').forEach(el => {
+      el.addEventListener('touchstart', () => { el.style.opacity = '0.85'; }, { passive: true });
+      el.addEventListener('touchend', () => { setTimeout(() => { el.style.opacity = ''; }, 150); }, { passive: true });
+    });
+  }
 
 });
