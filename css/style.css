@@ -17,10 +17,10 @@
   --whatsapp: #25d366;
   --whatsapp-dark: #1eb854;
 
-  /* Neutrals */
-  --bg: #0a0f1e;
-  --bg-card: #111827;
-  --bg-card2: #1a2233;
+  /* Neutrals - Updated for deeper premium look */
+  --bg: #050a14;
+  --bg-card: #0d1326;
+  --bg-card2: #151d33;
   --border: rgba(255,255,255,0.08);
   --text: #f1f5f9;
   --text-muted: #94a3b8;
@@ -1367,6 +1367,8 @@ h1, h2, h3, h4, h5, h6 {
 .spec-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
+  word-wrap: break-word;
 }
 .spec-table caption {
   font-size: 0.85rem;
@@ -1706,6 +1708,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  .container { padding: 0 16px; }
+
   /* Show mobile bottom bar */
   .mobile-bottom-nav {
     display: flex;
@@ -1881,8 +1885,8 @@ h1, h2, h3, h4, h5, h6 {
     scrollbar-width: none;
     -ms-overflow-style: none;
     padding-bottom: 4px;
-    margin: 0 -24px;
-    padding: 0 24px 4px;
+    margin: 0 -16px;
+    padding: 0 16px 4px;
   }
   .hero-stats::-webkit-scrollbar { display: none; }
 
@@ -2125,8 +2129,6 @@ h1, h2, h3, h4, h5, h6 {
    EXTRA SMALL PHONES (< 420px)
    =================================================== */
 @media (max-width: 420px) {
-  .container { padding: 0 14px; }
-
   .hero-title { font-size: 1.7rem; }
   .hero-subtitle { font-size: 0.88rem; }
   .hero-ctas { grid-template-columns: 1fr; }
