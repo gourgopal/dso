@@ -1,5 +1,5 @@
 // ============================================================
-// Dynamic Solution — Main JavaScript
+// Dynamic Solutions — Main JavaScript
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -112,10 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('contactMessage')?.value;
 
     const waText = encodeURIComponent(
-      `Hello Dynamic Solution!\n\nName: ${name}\nPhone: ${phone}\nInterested in: ${product}\nMessage: ${message}`
+      `Hello Dynamic Solutions!\n\nName: ${name}\nPhone: ${phone}\nInterested in: ${product}\nMessage: ${message}`
     );
 
-    window.open(`https://wa.me/919861778374?text=${waText}`, '_blank');
+    window.open(`https://wa.me/918917241615?text=${waText}`, '_blank');
   });
 
   // --- Counter Animation ---
