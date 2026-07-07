@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/
 
-Sitemap: https://dynamicsolutionsodisha.com/sitemap.xml
+Sitemap: https://dynamicsolutionodisha.com/sitemap.xml
