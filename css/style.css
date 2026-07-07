@@ -2207,3 +2207,14 @@ h1, h2, h3, h4, h5, h6 {
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+
+/* Lightbox */
+#lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; backdrop-filter: blur(5px); }
+#lightbox.show { display: flex; opacity: 1; }
+#lightbox-img { max-width: 90%; max-height: 90%; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.9); transition: transform 0.3s ease; }
+#lightbox.show #lightbox-img { transform: scale(1); }
+#lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; transition: color 0.3s ease; }
+#lightbox-close:hover { color: var(--primary-light); }
+img { cursor: pointer; transition: transform 0.3s ease; }
+img:hover:not(.logo-icon img) { transform: scale(1.02); }

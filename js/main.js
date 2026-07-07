@@ -184,3 +184,49 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+// Lightbox Feature
+document.addEventListener('DOMContentLoaded', () => {
+  // Create lightbox HTML
+  const lightbox = document.createElement('div');
+  lightbox.id = 'lightbox';
+  
+  const lightboxImg = document.createElement('img');
+  lightboxImg.id = 'lightbox-img';
+  
+  const lightboxClose = document.createElement('span');
+  lightboxClose.id = 'lightbox-close';
+  lightboxClose.innerHTML = '&times;';
+  
+  lightbox.appendChild(lightboxImg);
+  lightbox.appendChild(lightboxClose);
+  document.body.appendChild(lightbox);
+  
+  // Close lightbox event
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.classList.remove('show');
+      setTimeout(() => {
+        lightbox.style.display = 'none';
+      }, 300);
+    }
+  });
+  
+  // Attach click event to all relevant images
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    // Skip tiny icons if necessary, but we can bind to all
+    // Or skip if it's the logo
+    if (img.closest('.logo')) return;
+    
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+      // Trigger reflow
+      void lightbox.offsetWidth;
+      lightbox.classList.add('show');
+    });
+  });
+});
